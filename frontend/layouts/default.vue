@@ -3,7 +3,7 @@
     <Header/>
     <div class="overflow-hidden">
       <section class="relative">
-        <div class="relative py-24 lg:py-28">
+        <div class="relative flex justify-center py-24 lg:py-28">
           <slot/>
         </div>
       </section>
@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-import Header from "~/components/header/Header.vue"
+import Header from "@/components/header/Header.vue"
 </script>
