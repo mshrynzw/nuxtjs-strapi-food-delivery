@@ -1,15 +1,20 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import { palettes } from "@tailus/themer-plugins"
+
+export default {
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
     "./pages/**/*.vue",
     "./plugins/**/*.{js,ts}",
-    "./nuxt.config.{js,ts}",
     "./app.vue",
+    "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors : palettes.trust
+    },
   },
   plugins: [],
 }
+
