@@ -48,7 +48,8 @@ const {data, fetching, error} = useQuery({
         <nuxt-img :src="`${apiBaseUrl}${dish.attributes.image.data.attributes.url}`"
                   :alt="dish.attributes.name"/>
         <h3 class="mt-2 text-sm font-medium text-title">{{ dish.attributes.name }}</h3>
-        <p class="mt-3 text-sm">{{ dish.attributes.description }}</p>
+        <span class="text-caption text-xs">{{ dish.attributes.description }}</span>
+        <p class="mt-3 text-sm">{{ dish.attributes.price }}円</p>
       </div>
     </li>
   </ul>
