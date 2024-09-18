@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const searchQuery = ref('')
+const searchQuery = ref("")
 
 const handleSearch = (query: string) => {
   searchQuery.value = query
@@ -8,7 +8,8 @@ const handleSearch = (query: string) => {
 
 <template>
   <div class="flex flex-col space-y-8">
-    <RestaurantSearch v-model="searchQuery" @search="handleSearch" />
-    <RestaurantList :searchQuery="searchQuery" />
+    <h1 class="text-4xl text-display font-bold lg:text-5xl">Restaurant</h1>
+    <RestaurantSearch v-model="searchQuery" @search="handleSearch"/>
+    <RestaurantList :searchQuery="searchQuery"/>
   </div>
 </template>
