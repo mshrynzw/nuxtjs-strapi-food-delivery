@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   css: ['~/assets/css/main.css'],
   devtools: { enabled: true },
-  modules: ['@nuxt/image'],
+  modules: [
+    '@nuxt/image',
+    '@pinia/nuxt',
+  ],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -12,7 +15,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBaseUrl: process.env.PUBLIC_STRAPI_API_URL
+      apiBaseUrl: process.env.PUBLIC_STRAPI_API_URL || 'http://localhost:1337'
     }
   }
 })

@@ -45,8 +45,10 @@ const {data, fetching, error} = useQuery({
   <ul v-else class="flex flex-row space-x-4">
     <li v-for="dish in data.restaurant.data.attributes.dishes.data" :key="dish.id">
       <div class="max-w-xs card variant-mixed" data-shade="900">
-        <nuxt-img :src="`${apiBaseUrl}${dish.attributes.image.data.attributes.url}`"
-                  :alt="dish.attributes.name"/>
+        <nuxt-img
+            :src="`${apiBaseUrl}${dish.attributes.image.data.attributes.url}`"
+            :alt="dish.attributes.name"
+        />
         <h3 class="mt-2 text-sm font-medium text-title">{{ dish.attributes.name }}</h3>
         <span class="text-caption text-xs">{{ dish.attributes.description }}</span>
         <p class="mt-3 text-sm">{{ dish.attributes.price }}円</p>
