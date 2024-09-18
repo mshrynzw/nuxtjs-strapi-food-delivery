@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-950">
+  <div class="bg-white dark:bg-gray-950 min-h-screen">
     <Header/>
     <div class="overflow-hidden">
       <section class="relative">
@@ -10,7 +10,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import Header from "@/components/header/Header.vue"
-</script>
