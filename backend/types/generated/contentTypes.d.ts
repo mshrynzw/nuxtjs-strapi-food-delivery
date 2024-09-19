@@ -368,6 +368,7 @@ export interface ApiDishDish extends Schema.CollectionType {
     singularName: 'dish';
     pluralName: 'dishes';
     displayName: 'dish';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -382,6 +383,7 @@ export interface ApiDishDish extends Schema.CollectionType {
       'manyToOne',
       'api::restaurant.restaurant'
     >;
+    quantity: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
