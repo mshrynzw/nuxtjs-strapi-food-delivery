@@ -1,18 +1,15 @@
-declare interface Restaurant {
+export interface Dish {
   id: string;
   attributes: {
     name: string;
-    description: {
-      children: {
-        text: string;
-      }[];
-    }[];
+    description:  string;
+    price: number;
     image: {
       data: {
         attributes: {
           url: string;
         };
-      }[];
+      };
     };
   };
 }

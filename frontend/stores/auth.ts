@@ -1,5 +1,6 @@
 import {defineStore} from "pinia"
 import {$fetch} from "ofetch"
+import { useCookie } from '#app'
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
@@ -18,7 +19,14 @@ export const useAuthStore = defineStore("auth", {
         })
         this.user = response.user
         this.token = response.jwt
-        localStorage.setItem("token", response.jwt)
+        
+        const tokenCookie = useCookie('token', {
+          maxAge: 60 * 60 * 24 * 7,
+          secure: process.env.NODE_ENV === 'production',
+          httpOnly: false,
+          sameSite: 'strict'
+        })
+        tokenCookie.value = response.jwt
       } catch (error) {
         console.error("ログインエラー:", error)
         throw error
@@ -35,7 +43,14 @@ export const useAuthStore = defineStore("auth", {
         })
         this.user = response.user
         this.token = response.jwt
-        localStorage.setItem("token", response.jwt)
+        
+        const tokenCookie = useCookie('token', {
+          maxAge: 60 * 60 * 24 * 7,
+          secure: process.env.NODE_ENV === 'production',
+          httpOnly: false,
+          sameSite: 'strict'
+        })
+        tokenCookie.value = response.jwt
       } catch (error) {
         console.error("登録エラー:", error)
         throw error
@@ -45,6 +60,8 @@ export const useAuthStore = defineStore("auth", {
       this.user = null
       this.token = null
       localStorage.removeItem("token")
+      const tokenCookie = useCookie('token')
+      tokenCookie.value = null
     },
   },
 })
