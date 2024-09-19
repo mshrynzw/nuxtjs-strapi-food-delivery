@@ -1,5 +1,5 @@
 <template>
-  <a href="/frontend.bak/public" aria-label="tailus logo">
+  <a href="/frontend/public" aria-label="tailus logo">
     <svg class="h-7 text-gray-950 dark:text-white" viewBox="0 0 298 84" fill="none"
          xmlns="http://www.w3.org/2000/svg">
       <path

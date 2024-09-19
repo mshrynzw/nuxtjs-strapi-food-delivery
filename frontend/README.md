@@ -1,44 +1,75 @@
-<br><p align="center">
-<img height="100px" src="./public/movies.webp" />
-</p>
+# Nuxt 3 Minimal Starter
 
-<h1 align="center">Nuxt Movies</h1>
-<br>
-
-> Movies app demo built using [Nuxt 3](https://github.com/nuxt/nuxt), [Vue 3](https://github.com/vuejs/core), [UnoCSS](https://github.com/unocss/unocss), [Image Module](https://v1.image.nuxtjs.org), [The Movie Database](https://www.themoviedb.org) [API](https://www.themoviedb.org/documentation/api) and [TypeScript](https://github.com/microsoft/TypeScript).
-
-**🍿 Live preview:** https://movies.nuxt.space
-
-## Screenshots
-
-<img width="1191" src="https://user-images.githubusercontent.com/11247099/171109597-ee4fb47c-48b5-4dba-94b3-a56e0083c142.png">
-<img width="1191" src="https://user-images.githubusercontent.com/11247099/171109632-d9b480c4-e640-4812-8ea6-ccc6d17daa6a.png">
-<img width="1191" src="https://user-images.githubusercontent.com/11247099/171109644-c586de96-04be-4ae7-8a7b-c0d615a2ecba.png">
-<img width="764" src="https://user-images.githubusercontent.com/11247099/171109653-7137e2e5-ca06-4a30-9caa-bacdbc739121.png">
-
-## Proxy Server
-
-Check [proxy/README](./proxy)
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
-``` bash
-# Enable pnpm
-$ corepack enable
+Make sure to install the dependencies:
 
-# Install dependencies
-$ pnpm install
+```bash
+# npm
+npm install
 
-# Start dev server with hot reload at localhost:3000
-$ pnpm dev
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-## Credits
+## Development Server
 
-Based on [jasonujmaalvis/vue-movies](https://github.com/jasonujmaalvis/vue-movies) and [tastejs/nuxt-movies](https://github.com/tastejs/nuxt-movies).
+Start the development server on `http://localhost:3000`:
 
-<img height="50px" src="./public/tmdb.svg">
+```bash
+# npm
+npm run dev
 
-Data provided by [The Movie Database](https://www.themoviedb.org).
+# pnpm
+pnpm run dev
 
-This project uses the TMDB API but is not endorsed or certified by TMDB.
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
