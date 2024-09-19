@@ -18,16 +18,14 @@ const login = async () => {
 </script>
 
 <template>
-  <form @submit.prevent="login">
+  <form @submit.prevent="login" class="flex-col space-y-4">
     <div>
-      <label for="identifier">メールアドレス:</label>
-      <input id="identifier" v-model="identifier" type="email" required>
+      <input id="identifier" v-model="identifier" type="email" class="input variant-bottomOutlined sz-md" placeholder="E-Mail" required>
     </div>
     <div>
-      <label for="password">パスワード:</label>
-      <input id="password" v-model="password" type="password" required>
+      <input id="password" v-model="password" type="password" class="input variant-bottomOutlined sz-md" placeholder="Password" required>
     </div>
-    <button type="submit">ログイン</button>
+    <button type="submit" class="btn variant-soft sz-sm intent-primary">Login</button>
     <p v-if="error" class="error">{{ error }}</p>
   </form>
 </template>

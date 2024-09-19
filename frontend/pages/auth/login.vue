@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <h1>ログイン</h1>
+  <div class="flex-col space-y-4">
     <AuthLoginForm />
-    <p>アカウントをお持ちでない方は <NuxtLink to="/auth/signup">こちら</NuxtLink> から登録してください。</p>
+    <p>If you don't have an account, please register <NuxtLink to="/auth/signup">here</NuxtLink>.</p>
   </div>
 </template>
