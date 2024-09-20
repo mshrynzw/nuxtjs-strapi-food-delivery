@@ -37,7 +37,7 @@ export const useCartStore = defineStore("cart", {
         httpOnly: false,
         sameSite: "strict"
       })
-      cartCookie.value = this.items
+      cartCookie.value = {items: this.items, total: this.total}
     },
 
     removeItem(item: Dish) {
@@ -67,7 +67,7 @@ export const useCartStore = defineStore("cart", {
         httpOnly: false,
         sameSite: "strict"
       })
-      cartCookie.value = this.items
+      cartCookie.value = {items: this.items, total: this.total}
     }
   }
 })

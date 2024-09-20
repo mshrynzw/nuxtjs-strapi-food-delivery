@@ -26,8 +26,12 @@ const apiBaseUrl = config.public.apiBaseUrl
         <span class="text-caption text-xs">{{ dish.attributes.description }}</span>
         <p class="mt-3 text-sm">{{ dish.attributes.price }}円</p>
         <div class="flex justify-end mt-2 space-x-2">
-          <button class="btn variant-solid sz-sm intent-primary" @click="cartStore.addItem(dish)">+</button>
-          <button class="btn variant-solid sz-sm intent-primary" @click="cartStore.removeItem(dish)">-</button>
+          <button class="btn variant-solid sz-xs intent-primary" @click="cartStore.addItem(dish)">
+            <font-awesome-icon icon="plus"/>
+          </button>
+          <button class="btn variant-solid sz-xs intent-primary" @click="cartStore.removeItem(dish)">
+            <font-awesome-icon icon="minus"/>
+          </button>
         </div>
       </div>
     </li>

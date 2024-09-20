@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import type {Dish} from "@/types/dish"
+import {useCookie} from "#app"
+
+interface CartCookie {
+  items: Dish[];
+  total: number;
+}
 
 const cartStore = useCartStore()
-const items = computed(() => cartStore.items as Dish[])
-const total = computed(() => cartStore.total as number)
-
+const cartCookie = useCookie<CartCookie>("cart")
+const items = computed(() => cartStore.items.length > 0 ? cartStore.items : cartCookie.value?.items || [])
+const total = computed(() => cartStore.total || cartCookie.value?.total || 0)
 </script>
 
 <template>
@@ -13,11 +19,19 @@ const total = computed(() => cartStore.total as number)
 
     <ul>
       <li v-for="item in items" :key="item.id">
-        <p class="text-sm mt-3">
-          {{ item.attributes.name }} x {{ item.attributes.quantity }}
-          <button class="btn variant-solid sz-sm intent-primary" @click="cartStore.addItem(item)">+</button>
-          <button class="btn variant-solid sz-sm intent-primary" @click="cartStore.removeItem(item)">-</button>
-        </p>
+        <div>
+          <p class="text-sm mt-3">
+            {{ item.attributes.name }} x {{ item.attributes.quantity }}
+          </p>
+          <div class="flex flex-row space-x-2">
+            <button class="btn variant-solid sz-xs intent-primary" @click="cartStore.addItem(item)">
+              <font-awesome-icon icon="plus"/>
+            </button>
+            <button class="btn variant-solid sz-xs intent-primary" @click="cartStore.removeItem(item)">
+              <font-awesome-icon icon="minus"/>
+            </button>
+          </div>
+        </div>
       </li>
     </ul>
 

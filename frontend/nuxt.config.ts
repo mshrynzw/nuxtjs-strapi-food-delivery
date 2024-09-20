@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@pinia/nuxt',
   ],
+  plugins: ['~/plugins/fontawesome.ts'],
   postcss: {
     plugins: {
       tailwindcss: {},
